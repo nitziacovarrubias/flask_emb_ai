@@ -17,5 +17,5 @@ def sentiment_analyzer(text_to_analyse):
         label = None
         score = None
 
-    return {'label':label, 'score':score}
+    return {'label': label, 'score':score}
 
