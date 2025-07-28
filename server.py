@@ -16,6 +16,10 @@ def sent_analyzer():
     '''
     text_to_analyze = request.args.get('textToAnalyze')
     result = sentiment_analyzer(text_to_analyze)
+
+    if result['label'] is None:
+        return "Invalid input ! Try again."
+
     return f"The given text has been identified as {result['label'].split('_')[1]} with a score of {result['score']}."
 
 @app.route("/")
